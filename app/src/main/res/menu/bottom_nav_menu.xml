@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_shake"
+        android:icon="@drawable/ic_shake"
+        android:title="Lắc máy" />
+    <item
+        android:id="@+id/nav_compass"
+        android:icon="@drawable/ic_compass"
+        android:title="La bàn" />
+    <item
+        android:id="@+id/nav_light"
+        android:icon="@drawable/ic_light"
+        android:title="Ánh sáng" />
+</menu>
