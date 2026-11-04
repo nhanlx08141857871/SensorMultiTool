@@ -1,12 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/compass_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
     <TextView
+        android:id="@+id/tvSensorStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Compass - chờ người B hoàn thiện"
-        android:textSize="18sp" />
+        android:layout_marginBottom="16dp"
+        android:text="Đang khởi tạo la bàn..."
+        android:textSize="15sp"
+        android:textColor="#666666" />
+
+    <TextView
+        android:id="@+id/tvDegrees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0°"
+        android:textSize="54sp"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tvDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="24dp"
+        android:text="Bắc (N)"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FF3B30" />
+
+    <FrameLayout
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_marginBottom="24dp">
+
+        <FrameLayout
+            android:id="@+id/compassDialContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Đĩa vạch chia độ la bàn"
+                android:src="@drawable/ic_compass_rose" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="38dp"
+                android:text="N"
+                android:textColor="#FF3B30"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="38dp"
+                android:text="S"
+                android:textColor="#1C1C1E"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="38dp"
+                android:text="E"
+                android:textColor="#1C1C1E"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="38dp"
+                android:text="W"
+                android:textColor="#1C1C1E"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="20dp"
+            android:layout_gravity="top|center_horizontal"
+            android:background="#FF3B30" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvMagneticField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Từ trường: Đang đo..."
+        android:textSize="14sp"
+        android:textColor="#444444" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchLowPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Lọc nhiễu Low-Pass"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
 </LinearLayout>
