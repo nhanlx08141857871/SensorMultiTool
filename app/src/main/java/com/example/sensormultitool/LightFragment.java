@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -108,6 +109,25 @@ public class LightFragment extends Fragment implements SensorEventListener {
             tvLightCategory.setTextColor(Color.DKGRAY);
             tvSensorStatus.setTextColor(Color.DKGRAY);
         }
+    }
+    private void adjustScreenBrightness(float lux) {
+        if (getActivity() == null) return;
+
+        // Quy đổi độ sáng môi trường (Lux) sang độ sáng màn hình (từ 0.05f đến 1.0f)
+        float brightness;
+        if (lux <= 0) {
+            brightness = 0.05f;
+        } else if (lux >= 10000) {
+            brightness = 1.0f;
+        } else {
+            // Tăng tuyến tính độ sáng màn hình theo cường độ ánh sáng chiếu vào cảm biến
+            brightness = 0.05f + (lux / 10000.0f) * 0.95f;
+        }
+
+        // Áp dụng trực tiếp vào Window của ứng dụng
+        WindowManager.LayoutParams layoutParams = getActivity().getWindow().getAttributes();
+        layoutParams.screenBrightness = brightness;
+        getActivity().getWindow().setAttributes(layoutParams);
     }
 
     @Override
