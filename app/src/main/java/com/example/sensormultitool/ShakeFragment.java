@@ -149,6 +149,5 @@ public class ShakeFragment extends Fragment implements SensorEventListener {
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        // không cần xử lý
     }
 }

@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Mặc định mở tab Shake Detection khi khởi động app
         if (savedInstanceState == null) {
             loadFragment(new ShakeFragment());
         }

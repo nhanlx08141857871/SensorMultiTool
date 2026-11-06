@@ -68,7 +68,6 @@ public class LightFragment extends Fragment implements SensorEventListener {
     @Override
     public void onPause() {
         super.onPause();
-        // Hủy đăng ký sensor để tiết kiệm pin
         if (sensorManager != null) {
             sensorManager.unregisterListener(this);
         }
